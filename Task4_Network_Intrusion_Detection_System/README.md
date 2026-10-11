@@ -1,6 +1,21 @@
-# Network Intrusion Detection System
+# Task 4: Network Intrusion Detection System
 
-A passive Suricata IDS with project-owned signatures, real Suricata log review, and a local Streamlit dashboard. The custom rules alert only; this project does not change firewall policy or automatically block traffic.
+A passive Suricata IDS with custom signatures, real Suricata logs, and a local Streamlit dashboard. Detection only: the project does not alter firewall policy or automatically block traffic.
+
+**Verified:** ICMP capture on `wlan0`; custom ICMP, HTTP `/ids-test`, and TCP SYN-burst alerts on loopback. The SYN-burst rule is a heuristic, not proof of an attack.
+
+![Suricata dashboard showing alert metrics and recent security events](screenshots/dashboard-events.png)
+
+![Suricata dashboard overview and selected log sources](screenshots/dashboard-overview.png)
+
+## What it does
+
+- Monitors an explicitly selected network interface with Suricata.
+- Adds project-owned ICMP, HTTP test-URI, and TCP SYN-burst alert rules.
+- Reads real `fast.log` and `eve.json` data in a dashboard that refreshes every five seconds.
+- Documents safe localhost testing and manual alert triage; automatic blocking stays disabled.
+
+The screenshots above show the dashboard reading real Suricata logs. See [report.md](report.md) for verified test results and known limitations.
 
 ## Project layout
 
