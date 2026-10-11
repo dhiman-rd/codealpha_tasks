@@ -2,6 +2,12 @@
 
 A beginner-friendly Python and Streamlit dashboard for monitoring packet metadata on a network you own or are explicitly authorized to observe. Scapy captures live packets; the dashboard summarizes protocols and lets you filter and export packet details.
 
+## Dashboard screenshot
+
+Example dashboard after a live capture showing 41 packets and the protocol distribution. The packet table is omitted from this public screenshot to avoid exposing captured IP addresses.
+
+![Basic Network Sniffer dashboard after a live capture](./assets/dashboard-demo.png)
+
 ## What it does
 
 - Captures packets on a selected interface, including `wlan0` when present.
